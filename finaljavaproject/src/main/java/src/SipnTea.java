@@ -333,7 +333,7 @@ public class SipnTea {
                     LemonTea();
                     break;
                 case 2:
-                    // SBerryTea();
+                    SBerryTea();
                     break;
                 case 3:
                     AppleTea();
@@ -376,7 +376,98 @@ public class SipnTea {
                 TotalLemonTea = Add(TotalLemonTea, Order);
 
                 System.out.println("TotalLemon " + TotalLemonTea);
+                System.out.println("Order " + Order);
+                break;
 
+            case 2:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Lemon Tea + Standard Cup "
+                        + "\nQuantity: "));
+                Order = qty * Standard;
+                TotalLemonTea = Add(TotalLemonTea, Order);
+                System.out.println("TotalLemon " + TotalLemonTea);
+                System.out.println("Order " + Order);
+                break;
+
+            case 3:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Lemon Tea + Mega Cup "
+                        + "\nQuantity: "));
+                Order = qty * Mega;
+                TotalLemonTea = Add(TotalLemonTea, Order);
+                System.out.println("TotalLemon " + TotalLemonTea);
+                System.out.println("Order " + Order);
+                break;
+             
+            case 4:
+                JOptionPane.showMessageDialog(null, "\t \t Returning to MILKTEA Menu", "Return Window", JOptionPane.INFORMATION_MESSAGE);
+                showFreshTeaMenu();
+                break;
+
+            default:
+
+                throw new AssertionError();
+                
+                
+
+        }
+    }
+
+    static void SBerryTea() {
+
+        Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "Cup Size Choice\n" + "[1] Pillar " + 68
+                + "\n[2] Petite " + 78
+                + "\n[3] Mega " + 88
+                + "\n[4] Go Back to Milktea Menu" + "\n"
+                + "Choose [1-3]: "));
+
+        evaluateSBerryTeaCup();
+
+    }
+
+    static void evaluateSBerryTeaCup() {
+        int Petite = 68;
+        int Standard = 78;
+        int Mega = 88;
+
+        switch (Cupchoice) {
+            case 1:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Strawberry Tea + Petite Cup "
+                        + "\nQuantity: "));
+                Order = qty * Petite;
+                TotalSBerrytea = Add(TotalSBerrytea, Order);
+
+                System.out.println("StawberryTea  " + TotalSBerrytea);
+                System.out.println("Order " + Order);
+
+                break;
+
+            case 2:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Strawberry Tea + Standard Cup "
+                        + "\nQuantity: "));
+                Order = qty * Standard;
+                TotalSBerrytea = Add(TotalSBerrytea, Order);
+
+                System.out.println("StawberryTea " + TotalSBerrytea);
+                System.out.println("Order " + Order);
+                break;
+
+            case 3:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Strawberry Tea + Mega Cup "
+                        + "\nQuantity: "));
+                Order = qty * Mega;
+                TotalSBerrytea = Add(TotalSBerrytea, Order);
+                System.out.println("StawberryTea " + TotalSBerrytea);
+                System.out.println("Order " + Order);
+                break;
+
+            case 4:
+                JOptionPane.showMessageDialog(null, "\t \t Returning to MILKTEA Menu", "Return Window", JOptionPane.INFORMATION_MESSAGE);
+                showFreshTeaMenu();
+                break;
+
+            default:
+
+                throw new AssertionError();
         }
 
     }

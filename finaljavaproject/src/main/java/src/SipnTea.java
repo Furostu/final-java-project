@@ -426,8 +426,4 @@ public class SipnTea {
 
     }
 
-    public static void main(String[] args) {
-
-        DisplayMainMenu();
-    }
 }

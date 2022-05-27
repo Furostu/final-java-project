@@ -25,9 +25,12 @@ public class SipnTea {
    static  int TotalCaramel;
 
     //FRUITTEA
+   
+   
+   
     //SMOOTHIE    
    static  int TotalSmoothie;
-    static int TotalStrawberry;
+   static int TotalStrawberry;
 
     static void DisplayMainMenu() {
         trans = Integer.parseInt(JOptionPane.showInputDialog(null, """
@@ -69,6 +72,8 @@ public class SipnTea {
     int getCup(int a) {
         return this.Cupchoice = a;
     }
+    
+    //MILKTEA METHOD
 
    static void showMilkTeaMenu() {
         choice = Integer.parseInt(JOptionPane.showInputDialog(null, "MilkTea Menu Choice"
@@ -90,9 +95,11 @@ public class SipnTea {
                     break;
                 case 2:
                     // OREO CHEESECAKE
+                    OreoCheeseCake();
                     break;
                 case 3:
                     // SALTED CARAMEL METHOD
+                    SaltedCaramel();
                     break;
 
                 case 4:
@@ -106,6 +113,8 @@ public class SipnTea {
         } while (choice <= 4);
     }
 
+   //WINTERMELON
+   
    static void WinterMelon() {
 
         Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -166,6 +175,135 @@ public class SipnTea {
         }
 
     }
+   
+   //OREO
+    static void OreoCheeseCake() {
+
+        Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "Cup Size Choice\n" + "[1] Pillar " + 79
+                + "\n[2] Classic " + 89
+                + "\n[3] Grande Cup " + 99
+                + "\n[4] Go Back to Milktea Menu" + "\n"
+                + "Choose [1-3]: "));
+
+        evaluateOreoCup();
+
+    }
+   
+     static void evaluateOreoCup() {
+         
+        int Pillar = 79;
+        int Classic = 89;
+        int Grande = 99;
+
+        switch (Cupchoice) {
+            case 1:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Winter Melon + Pillar Cup "
+                        + "\nQuantity: "));
+                Order = qty * Pillar;
+                TotalOreo = Add(TotalOreo, Order);
+
+                System.out.println("TotalOreo " + TotalOreo);
+                System.out.println("Order " + Order);
+
+                break;
+
+            case 2:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Winter Melon + Classic Cup "
+                        + "\nQuantity: "));
+                Order = qty * Classic;
+                TotalOreo = Add(TotalOreo, Order);
+
+                System.out.println("TotalOreo " + TotalWinter);
+                System.out.println("Order " + Order);
+                break;
+
+            case 3:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Winter Melon + Grande Cup "
+                        + "\nQuantity: "));
+                Order = qty * Grande;
+                TotalOreo = Add(TotalOreo, Order);
+                System.out.println("TotalOreo " + TotalWinter);
+                System.out.println("Order " + Order);
+                break;
+
+            case 4:
+                JOptionPane.showMessageDialog(null, "\t \t Returning to MILKTEA Menu", "Return Window", JOptionPane.INFORMATION_MESSAGE);
+                showMilkTeaMenu();
+                break;
+
+            default:
+
+                throw new AssertionError();
+        }
+
+    }
+   
+   
+     //SALTED CARAMEL
+    static void SaltedCaramel() {
+
+        Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "Cup Size Choice\n" + "[1] Pillar " + 75
+                + "\n[2] Classic " + 85
+                + "\n[3] Grande Cup " + 95
+                + "\n[4] Go Back to Milktea Menu" + "\n"
+                + "Choose [1-3]: "));
+
+        evaluateSaltedCup();
+
+    }
+     
+    static void evaluateSaltedCup() {
+         
+        int Pillar = 75;
+        int Classic = 85;
+        int Grande = 95;
+
+        switch (Cupchoice) {
+            case 1:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Winter Melon + Pillar Cup "
+                        + "\nQuantity: "));
+                Order = qty * Pillar;
+                TotalCaramel = Add(TotalCaramel, Order);
+
+                System.out.println("TotalCaramel " + TotalCaramel);
+                System.out.println("Order " + Order);
+
+                break;
+
+            case 2:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Winter Melon + Classic Cup "
+                        + "\nQuantity: "));
+                Order = qty * Classic;
+                TotalCaramel = Add(TotalCaramel, Order);
+                System.out.println("TotalCaramel " + TotalCaramel);
+                System.out.println("Order " + Order);
+                break;
+
+            case 3:
+                qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Winter Melon + Grande Cup "
+                        + "\nQuantity: "));
+                Order = qty * Grande;
+                TotalCaramel = Add(TotalCaramel, Order);
+                System.out.println("TotalCaramel " + TotalCaramel);
+                System.out.println("Order " + Order);
+                break;
+
+            case 4:
+                JOptionPane.showMessageDialog(null, "\t \t Returning to MILKTEA Menu", "Return Window", JOptionPane.INFORMATION_MESSAGE);
+                showMilkTeaMenu();
+                break;
+
+            default:
+
+                throw new AssertionError();
+        }
+
+    }
+   
+   
+   // SMOOTHIE METHOD
 
     static void FreshTea() {
         System.out.println("Transaction Choice is FRESH TEA  : " + trans);
@@ -277,9 +415,7 @@ public class SipnTea {
         
         System.out.println("THE TotalMilkTea IS  = " + TotalMilkTea);
         
-        TotalSmoothie = Add(TotalStrawberry, TotalCaramel, TotalOreo);
         
-        System.out.println("THE TotalOreo  = " + TotalOreo);
 
         OverAllCost = Add(TotalSmoothie, TotalMilkTea, TotalCaramel);
         

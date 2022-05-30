@@ -1,0 +1,69 @@
+I. PROCEED					()-> variables
+II. MainMenu
+    1. MilkTea
+    2. Fruitie
+    3. Smoothie
+    4. Check Balance
+    5. Payment
+II.i(MilkTea)
+    1. Wintermelon
+    2. Salted Caramel
+    3. Oreo
+    4. Check Balance
+    5. Return to the Main Menu
+II.i(1)
+    1. Pillar (pillarW)
+    2. Classic (classicW)
+    3. Grande (grandeW)
+    4. Return to the MilkTea Menu
+II.i(1)
+    1. Quantity (qty)
+       a. (totP) = (pillarW) * (qty)
+    2. Quantity (qty)
+       a. (totC) = (classicW) * (qty) 
+    3. Quantity (qty)
+       a. (totG) = (grandeW) * (qty)
+    4. MilkteaMenu();
+II.i(1)
+    1. (totW) = (totP) + (totC) + (totG)
+	MilkteaMenu();
+II.i(2)
+    1. Pillar (pillarS)
+    2. Classic (classicS)
+    3. Grande (grandeS)
+    4. Return to the MilkTea Menu
+II.i(2)
+    1. Quantity (qty)
+       a. (totP) = (pillarS) * (qty)
+    2. Quantity (qty)
+       a. (totC) = (classicS) * (qty) 
+    3. Quantity (qty)
+       a. (totG) = (grandeS) * (qty)
+    4. MilkteaMenu();
+II.i(2)
+    1. (totS) = (totP) + (totC) + (totG)
+II.i(3)
+    1. Pillar (pillarO)
+    2. Classic (classicO)
+    3. Grande (grandeO)
+    4. Return to the MilkTea Menu
+II.i(3)
+    1. Quantity (qty)
+       a. (totP) = (pillarO) * (qty)
+    2. Quantity (qty)
+       a. (totC) = (classicO) * (qty) 
+    3. Quantity (qty)
+       a. (totG) = (grandeO) * (qty)
+    4. MilkteaMenu();
+II.i(3)
+    1. (totO) = (totP) + (totC) + (totG)
+II.i(4)
+    1. (totMilktea) = (totW) + (totS) + (totO)
+	balance = (totMilktea) + (totFrutie) + (totSmoothie)
+	
+
+
+
+
+
+    

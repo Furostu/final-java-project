@@ -14,52 +14,48 @@ public class SipnTea {
 
     //Quantity
     static int qty;
-    
-    static String ReceiptText="";
+
+    static String ReceiptText = "";
     //OrderCost
-     static int Order;
+    static int Order;
     //TOTAL COSTING
-   static int OverAllCost;
-   
+    static int OverAllCost;
+
     // MILKTEA
-   static int TotalMilkTea;
-   static int TotalWinter;
-   static int TotalOreo;
-   static int TotalCaramel;
+    static int TotalMilkTea;
+    static int TotalWinter;
+    static int TotalOreo;
+    static int TotalCaramel;
 
     //FRUITTEA
-   static int TotalFreshTea;
-   static int TotalLemonTea;
-   static int TotalStrawberryTea;
-   static int TotalAppleTea;
-   
+    static int TotalFreshTea;
+    static int TotalLemonTea;
+    static int TotalStrawberryTea;
+    static int TotalAppleTea;
+
     //SMOOTHIE    
-   static int TotalSmoothie;
-   static int TotalStrawberry;
-   static int TotalLemon;
-   static int TotalMango;
-   
-   static int []ItemPurchased={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-   static int []ItemPrice={65,75,85,79,89,99,75,85,95,60,70,80,68,78,88,65,75,85,90,110,130,95,115,135,99,119,139};
-   static String []ItemName={"Wintermelon - Pillar Cup","Wintermelon - Classic Cup","Wintermelon - Grande Cup","Oreo Cheesecake - Pillar Cup", 
-       "Oreo Cheesecake - Classic Cup","Oreo Cheesecake - Grande Cup","Salted Caramel - Pillar Cup","Salted Caramel - Classic Cup","Salted Caramel - Grande Cup",
-       "Lemon Tea - Petite","Lemon Tea - Standard","Lemon Tea - Mega","Strawberry Tea - Petite","Strawberry Tea - Standard","Strawberry Tea - Mega", "Apple Tea - Petite",
-       "Apple Tea - Standard","Apple Tea - Mega","Strawberry-Banana - Slim", "Strawberry-Banana - The Usual", "Strawberry-Banana - Jumbo", "Lemon-Blueberry - Slim", "Lemon-Blueberry - The Usual",
+    static int TotalSmoothie;
+    static int TotalStrawberry;
+    static int TotalLemon;
+    static int TotalMango;
+
+    static int[] ItemPurchased = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    static int[] ItemPrice = {65, 75, 85, 79, 89, 99, 75, 85, 95, 60, 70, 80, 68, 78, 88, 65, 75, 85, 90, 110, 130, 95, 115, 135, 99, 119, 139};
+    static String[] ItemName = {"Wintermelon - Pillar Cup", "Wintermelon - Classic Cup", "Wintermelon - Grande Cup", "Oreo Cheesecake - Pillar Cup",
+        "Oreo Cheesecake - Classic Cup", "Oreo Cheesecake - Grande Cup", "Salted Caramel - Pillar Cup", "Salted Caramel - Classic Cup", "Salted Caramel - Grande Cup",
+        "Lemon Tea - Petite", "Lemon Tea - Standard", "Lemon Tea - Mega", "Strawberry Tea - Petite", "Strawberry Tea - Standard", "Strawberry Tea - Mega", "Apple Tea - Petite",
+        "Apple Tea - Standard", "Apple Tea - Mega", "Strawberry-Banana - Slim", "Strawberry-Banana - The Usual", "Strawberry-Banana - Jumbo", "Lemon-Blueberry - Slim", "Lemon-Blueberry - The Usual",
         "Lemon-Blueberry - Jumbo", "Mango-Pineapple - Slim", "Mango-Pineapple - The Usual", "Mango-Pineapple - Jumbo"};
-           
-    
-           
-   static void Receipt(){
-       for(int x=0;x<=26;x++){
-          if(ItemPurchased[x]!=0){
-              ReceiptText += ItemName[x]+ " - "+ ItemPurchased[x]+ " - "+(ItemPrice[x]*ItemPurchased[x])+"\n";
-          }
-       }
-}
-         
-                
-   
-   static void DisplayMainMenu() {
+
+    static void Receipt() {
+        for (int x = 0; x <= 26; x++) {
+            if (ItemPurchased[x] != 0) {
+                ReceiptText += ItemName[x] + " - " + ItemPurchased[x] + " - " + (ItemPrice[x] * ItemPurchased[x]) + "\n";
+            }
+        }
+    }
+
+    static void DisplayMainMenu() {
         trans = Integer.parseInt(JOptionPane.showInputDialog(null, """
                                                                    \tMenu Choices 
                                                                    [1] MilkTea              [4] Check Balance
@@ -102,10 +98,9 @@ public class SipnTea {
     int getCup(int a) {
         return this.Cupchoice = a;
     }
-    
-    //MILKTEA METHOD
 
-   static void showMilkTeaMenu() {
+    //MILKTEA METHOD
+    static void showMilkTeaMenu() {
         choice = Integer.parseInt(JOptionPane.showInputDialog(null, "MilkTea Menu Choice"
                 + "					 \n[1] Winter Melon"
                 + "					 \n[2] Oreo Cheesecake"
@@ -114,7 +109,7 @@ public class SipnTea {
                 + "					\nChoose [1-3]:"));
     }
 
-   static void MilkTea() {
+    static void MilkTea() {
 
         showMilkTeaMenu();
 
@@ -143,9 +138,7 @@ public class SipnTea {
         } while (choice <= 4);
     }
 
-   
-   
-   static void WinterMelon() {
+    static void WinterMelon() {
 
         Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Cup Size Choice\n" + "[1] Pillar " + 65
@@ -157,8 +150,8 @@ public class SipnTea {
         evaluateWinterCup();
 
     }
-   
-   static void OreoCheeseCake() {
+
+    static void OreoCheeseCake() {
 
         Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Cup Size Choice\n" + "[1] Pillar " + 79
@@ -170,8 +163,8 @@ public class SipnTea {
         evaluateOreoCup();
 
     }
-   
-   static void SaltedCaramel() {
+
+    static void SaltedCaramel() {
 
         Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Cup Size Choice\n" + "[1] Pillar " + 75
@@ -183,9 +176,8 @@ public class SipnTea {
         evaluateSaltedCup();
 
     }
-   
 
-   static void evaluateWinterCup() {
+    static void evaluateWinterCup() {
         int Pillar = 65;
         int Classic = 75;
         int Grande = 85;
@@ -199,7 +191,7 @@ public class SipnTea {
 
                 System.out.println("TotalWinter " + TotalWinter);
                 System.out.println("Order " + Order);
-                ItemPurchased[0]+=qty;
+                ItemPurchased[0] += qty;
                 break;
 
             case 2:
@@ -210,7 +202,7 @@ public class SipnTea {
 
                 System.out.println("TotalWinter " + TotalWinter);
                 System.out.println("Order " + Order);
-                ItemPurchased[1]+=qty;
+                ItemPurchased[1] += qty;
                 break;
 
             case 3:
@@ -220,7 +212,7 @@ public class SipnTea {
                 TotalWinter = Add(TotalWinter, Order);
                 System.out.println("TotalWinter " + TotalWinter);
                 System.out.println("Order " + Order);
-                ItemPurchased[2]+=qty;
+                ItemPurchased[2] += qty;
                 break;
 
             case 4:
@@ -234,10 +226,9 @@ public class SipnTea {
         }
 
     }
-   
-    
-     static void evaluateOreoCup() {
-         
+
+    static void evaluateOreoCup() {
+
         int Pillar = 79;
         int Classic = 89;
         int Grande = 99;
@@ -251,7 +242,7 @@ public class SipnTea {
 
                 System.out.println("TotalOreo " + TotalOreo);
                 System.out.println("Order " + Order);
-                ItemPurchased[3]+=qty;
+                ItemPurchased[3] += qty;
                 break;
 
             case 2:
@@ -262,7 +253,7 @@ public class SipnTea {
 
                 System.out.println("TotalOreo " + TotalOreo);
                 System.out.println("Order " + Order);
-                ItemPurchased[4]+=qty;
+                ItemPurchased[4] += qty;
                 break;
 
             case 3:
@@ -272,7 +263,7 @@ public class SipnTea {
                 TotalOreo = Add(TotalOreo, Order);
                 System.out.println("TotalOreo " + TotalOreo);
                 System.out.println("Order " + Order);
-                ItemPurchased[5]+=qty;
+                ItemPurchased[5] += qty;
                 break;
 
             case 4:
@@ -286,11 +277,9 @@ public class SipnTea {
         }
 
     }
-   
-   
-   
+
     static void evaluateSaltedCup() {
-         
+
         int Pillar = 75;
         int Classic = 85;
         int Grande = 95;
@@ -304,7 +293,7 @@ public class SipnTea {
 
                 System.out.println("TotalCaramel " + TotalCaramel);
                 System.out.println("Order " + Order);
-                ItemPurchased[6]+=qty;
+                ItemPurchased[6] += qty;
                 break;
 
             case 2:
@@ -314,7 +303,7 @@ public class SipnTea {
                 TotalCaramel = Add(TotalCaramel, Order);
                 System.out.println("TotalCaramel " + TotalCaramel);
                 System.out.println("Order " + Order);
-                ItemPurchased[7]+=qty;
+                ItemPurchased[7] += qty;
                 break;
 
             case 3:
@@ -324,7 +313,7 @@ public class SipnTea {
                 TotalCaramel = Add(TotalCaramel, Order);
                 System.out.println("TotalCaramel " + TotalCaramel);
                 System.out.println("Order " + Order);
-                ItemPurchased[8]+=qty;
+                ItemPurchased[8] += qty;
                 break;
 
             case 4:
@@ -338,23 +327,20 @@ public class SipnTea {
         }
 
     }
-   
-   
-   
-    
+
     static void showFreshTeaMenu() {
 
         choice = Integer.parseInt(JOptionPane.showInputDialog(null, "FreshTea Menu Choice"
-                    + "					 \n[1] Lemon Tea"
-                    + "					 \n[2] Strawberry Tea"
-                    + "					 \n[3] Apple Tea\n"
-                    + "[4] Return to the Main Menu\n"
-                    + "					Choose [1-3]:"));
+                + "					 \n[1] Lemon Tea"
+                + "					 \n[2] Strawberry Tea"
+                + "					 \n[3] Apple Tea\n"
+                + "[4] Return to the Main Menu\n"
+                + "					Choose [1-3]:"));
     }
 
     static void FreshTea() {
         showFreshTeaMenu();
-        
+
         do {
             switch (choice) {
 
@@ -376,9 +362,9 @@ public class SipnTea {
             }
 
         } while (choice <= 4);
-        
 
     }
+
     //FreshTea Flavor Menu
     static void LemonTea() {
         Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -389,7 +375,7 @@ public class SipnTea {
                 + "Choose [1-3]: "));
         evaluateLemonTea();
     }
-    
+
     static void StrawberryTea() {
         Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Cup Size Choice\n" + "[1] Petite " + 68
@@ -399,7 +385,7 @@ public class SipnTea {
                 + "Choose [1-3]: "));
         evaluateStrawberryTea();
     }
-    
+
     static void AppleTea() {
         Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Cup Size Choice\n" + "[1] Petite " + 65
@@ -424,7 +410,7 @@ public class SipnTea {
                 TotalLemonTea = Add(TotalLemonTea, Order);
                 System.out.println("TotalLemonTea " + TotalLemonTea);
                 System.out.println("Order " + Order);
-                ItemPurchased[9]+=qty;
+                ItemPurchased[9] += qty;
                 break;
 
             case 2:
@@ -433,7 +419,7 @@ public class SipnTea {
                 Order = qty * Standard;
                 TotalLemonTea = Add(TotalLemonTea, Order);
                 System.out.println("TotalLemonTea " + TotalLemonTea);
-                ItemPurchased[10]+=qty;
+                ItemPurchased[10] += qty;
                 break;
 
             case 3:
@@ -442,7 +428,7 @@ public class SipnTea {
                 Order = qty * Mega;
                 TotalLemonTea = Add(TotalLemonTea, Order);
                 System.out.println("TotalLemonTea " + TotalLemonTea);
-                ItemPurchased[11]+=qty;
+                ItemPurchased[11] += qty;
                 break;
 
             case 4:
@@ -456,8 +442,7 @@ public class SipnTea {
         }
 
     }
-    
-    
+
     static void evaluateStrawberryTea() {
         int Petite = 68;
         int Standard = 78;
@@ -471,7 +456,7 @@ public class SipnTea {
                 TotalStrawberryTea = Add(TotalStrawberryTea, Order);
                 System.out.println("TotalStrawberryTea " + TotalStrawberryTea);
                 System.out.println("Order " + Order);
-                ItemPurchased[12]+=qty;
+                ItemPurchased[12] += qty;
                 break;
 
             case 2:
@@ -480,7 +465,7 @@ public class SipnTea {
                 Order = qty * Standard;
                 TotalStrawberryTea = Add(TotalStrawberryTea, Order);
                 System.out.println("TotalStrawberryTea " + TotalStrawberryTea);
-                ItemPurchased[13]+=qty;
+                ItemPurchased[13] += qty;
                 break;
 
             case 3:
@@ -489,7 +474,7 @@ public class SipnTea {
                 Order = qty * Mega;
                 TotalStrawberryTea = Add(TotalStrawberryTea, Order);
                 System.out.println("TotalStrawberryTea " + TotalStrawberryTea);
-                ItemPurchased[14]+=qty;
+                ItemPurchased[14] += qty;
                 break;
 
             case 4:
@@ -503,8 +488,7 @@ public class SipnTea {
         }
 
     }
-    
-    
+
     static void evaluateAppleTea() {
         int Petite = 65;
         int Standard = 75;
@@ -518,7 +502,7 @@ public class SipnTea {
                 TotalAppleTea = Add(TotalAppleTea, Order);
                 System.out.println("TotalAppleTea " + TotalAppleTea);
                 System.out.println("Order " + Order);
-                ItemPurchased[15]+=qty;
+                ItemPurchased[15] += qty;
                 break;
 
             case 2:
@@ -527,7 +511,7 @@ public class SipnTea {
                 Order = qty * Standard;
                 TotalAppleTea = Add(TotalAppleTea, Order);
                 System.out.println("TotalAppleTea " + TotalAppleTea);
-                ItemPurchased[16]+=qty;
+                ItemPurchased[16] += qty;
                 break;
 
             case 3:
@@ -536,7 +520,7 @@ public class SipnTea {
                 Order = qty * Mega;
                 TotalAppleTea = Add(TotalAppleTea, Order);
                 System.out.println("TotalAppleTea " + TotalAppleTea);
-                ItemPurchased[17]+=qty;
+                ItemPurchased[17] += qty;
                 break;
 
             case 4:
@@ -550,9 +534,9 @@ public class SipnTea {
         }
 
     }
-    
+
 // SMOOTHIE METHOD
-   static void showSmoothieMenu() {
+    static void showSmoothieMenu() {
 
         choice = Integer.parseInt(JOptionPane.showInputDialog(null, "Smoothie Menu Choice\n"
                 + "					 [1] Strawberry\n"
@@ -590,6 +574,7 @@ public class SipnTea {
 
     }
 //Smoothie Flavor Menu
+
     static void Strawberry() {
         Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Cup Size Choice\n" + "[1] Slim " + 90
@@ -599,7 +584,7 @@ public class SipnTea {
                 + "Choose [1-3]: "));
         evaluateStrawberryCup();
     }
-    
+
     static void Lemon() {
         Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Cup Size Choice\n" + "[1] Slim " + 95
@@ -609,7 +594,7 @@ public class SipnTea {
                 + "Choose [1-3]: "));
         evaluateLemonCup();
     }
-    
+
     static void Mango() {
         Cupchoice = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Cup Size Choice\n" + "[1] Slim " + 99
@@ -620,7 +605,7 @@ public class SipnTea {
         evaluateMangoCup();
     }
 
- //Evaluate Smoothie Flavor Menu
+    //Evaluate Smoothie Flavor Menu
     static void evaluateStrawberryCup() {
         int Slim = 90;
         int TheUsual = 110;
@@ -634,7 +619,7 @@ public class SipnTea {
                 TotalStrawberry = Add(TotalStrawberry, Order);
                 System.out.println("TotalStrawberry " + TotalStrawberry);
                 System.out.println("Order " + Order);
-                ItemPurchased[18]+=qty;
+                ItemPurchased[18] += qty;
                 break;
 
             case 2:
@@ -643,7 +628,7 @@ public class SipnTea {
                 Order = qty * TheUsual;
                 TotalStrawberry = Add(TotalStrawberry, Order);
                 System.out.println("TotalStrawberry " + TotalStrawberry);
-                ItemPurchased[19]+=qty;
+                ItemPurchased[19] += qty;
                 break;
 
             case 3:
@@ -652,7 +637,7 @@ public class SipnTea {
                 Order = qty * Jumbo;
                 TotalStrawberry = Add(TotalStrawberry, Order);
                 System.out.println("TotalStrawberry " + TotalStrawberry);
-                ItemPurchased[20]+=qty;
+                ItemPurchased[20] += qty;
                 break;
 
             case 4:
@@ -666,9 +651,7 @@ public class SipnTea {
         }
 
     }
-    
-    
-     
+
     static void evaluateLemonCup() {
         int Slim = 95;
         int TheUsual = 115;
@@ -682,7 +665,7 @@ public class SipnTea {
                 TotalLemon = Add(TotalLemon, Order);
                 System.out.println("TotalLemon " + TotalLemon);
                 System.out.println("Order " + Order);
-                ItemPurchased[21]+=qty;
+                ItemPurchased[21] += qty;
                 break;
 
             case 2:
@@ -691,16 +674,16 @@ public class SipnTea {
                 Order = qty * TheUsual;
                 TotalLemon = Add(TotalLemon, Order);
                 System.out.println("TotalLemon " + TotalLemon);
-                ItemPurchased[22]+=qty;
+                ItemPurchased[22] += qty;
                 break;
 
             case 3:
                 qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Lemon + Jumbo "
                         + "\nQuantity: "));
                 Order = qty * Jumbo;
-                TotalLemon= Add(TotalLemon, Order);
+                TotalLemon = Add(TotalLemon, Order);
                 System.out.println("TotalLemon " + TotalLemon);
-                ItemPurchased[23]+=qty;
+                ItemPurchased[23] += qty;
                 break;
 
             case 4:
@@ -714,7 +697,7 @@ public class SipnTea {
         }
 
     }
-    
+
     static void evaluateMangoCup() {
         int Slim = 99;
         int TheUsual = 119;
@@ -728,7 +711,7 @@ public class SipnTea {
                 TotalMango = Add(TotalMango, Order);
                 System.out.println("TotalMango " + TotalMango);
                 System.out.println("Order " + Order);
-                ItemPurchased[24]+=qty;
+                ItemPurchased[24] += qty;
                 break;
 
             case 2:
@@ -737,16 +720,16 @@ public class SipnTea {
                 Order = qty * TheUsual;
                 TotalMango = Add(TotalMango, Order);
                 System.out.println("TotalMango " + TotalMango);
-                ItemPurchased[25]+=qty;
+                ItemPurchased[25] += qty;
                 break;
 
             case 3:
                 qty = Integer.parseInt(JOptionPane.showInputDialog(null, "\nYou Chose: Mango + Jumbo "
                         + "\nQuantity: "));
                 Order = qty * Jumbo;
-                TotalMango= Add(TotalMango, Order);
+                TotalMango = Add(TotalMango, Order);
                 System.out.println("TotalMango " + TotalMango);
-                ItemPurchased[26]+=qty;
+                ItemPurchased[26] += qty;
                 break;
 
             case 4:
@@ -760,10 +743,6 @@ public class SipnTea {
         }
 
     }
-    
-   
-    
-    
 
     static int Add(int a, int b) {
         return a + b;
@@ -777,61 +756,58 @@ public class SipnTea {
 
         TotalMilkTea = Add(TotalOreo, TotalCaramel, TotalWinter);
         System.out.println("THE TotalMilkTea IS  = " + TotalMilkTea);
-        
-        
-        TotalFreshTea = Add(TotalLemonTea,TotalStrawberryTea, TotalAppleTea);
+
+        TotalFreshTea = Add(TotalLemonTea, TotalStrawberryTea, TotalAppleTea);
         System.out.println("THE TotalFreshTea IS  = " + TotalFreshTea);
-        
-        TotalSmoothie = Add(TotalStrawberry,TotalLemon, TotalMango);
+
+        TotalSmoothie = Add(TotalStrawberry, TotalLemon, TotalMango);
         System.out.println("THE TotalSmoothie IS  = " + TotalSmoothie);
-        
-        
+
         OverAllCost = Add(TotalSmoothie, TotalMilkTea, TotalFreshTea);
-        
+
         System.out.println("THE OVER ALL COMPUTATION IS  = " + OverAllCost);
 
         JOptionPane.showMessageDialog(null, "\t \t YOUR CURRENT BALANCE IS " + OverAllCost, "Return Window", JOptionPane.INFORMATION_MESSAGE);
         DisplayMainMenu();
     }
-    
+
     static void Payment() {
         Receipt();
         pay = Integer.parseInt(JOptionPane.showInputDialog(null, "Your Payment: "));
 
-        if (trans != 4 ) {
+        if (trans != 4) {
             TotalMilkTea = Add(TotalOreo, TotalCaramel, TotalWinter);
             System.out.println("THE TotalMilkTea IS  = " + TotalMilkTea);
-            
-            TotalFreshTea = Add(TotalLemonTea,TotalStrawberryTea, TotalAppleTea);
+
+            TotalFreshTea = Add(TotalLemonTea, TotalStrawberryTea, TotalAppleTea);
             System.out.println("THE TotalFreshTea IS  = " + TotalFreshTea);
-        
-            TotalSmoothie = Add(TotalStrawberry,TotalLemon, TotalMango);
+
+            TotalSmoothie = Add(TotalStrawberry, TotalLemon, TotalMango);
             System.out.println("THE TotalSmoothie IS  = " + TotalSmoothie);
-        
+
             OverAllCost = Add(TotalSmoothie, TotalMilkTea, TotalFreshTea);
             System.out.println("THE OVER ALL COMPUTATION IS  = " + OverAllCost);
         }
         System.out.print(ReceiptText);
-        if(OverAllCost <= pay) {
+        if (OverAllCost <= pay) {
 
-
-            JOptionPane.showMessageDialog(null, 
+            JOptionPane.showMessageDialog(null,
                     "========RECEIPT==========\n"
-                    +ReceiptText
-                    +"\n"
-                    +"\n"
-                    +"========================="
+                    + ReceiptText
+                    + "\n"
+                    + "\n"
+                    + "========================="
                     + "\nTotal .........." + OverAllCost
                     + "\nPayment .........." + pay
                     + "\nChange .........." + (pay - OverAllCost));
             exit();
-        }else {
-            JOptionPane.showMessageDialog(null, "\t \t INSUFFICIENT PAYMENT\n" 
-        + "\n \t YOUR OVERALL PRICE IS " + OverAllCost, "Return Window", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "\t \t INSUFFICIENT PAYMENT\n"
+                    + "\n \t YOUR OVERALL PRICE IS " + OverAllCost, "Return Window", JOptionPane.WARNING_MESSAGE);
             Payment();
         }
     }
-   
+
     static void exit() {
 
         JOptionPane.showMessageDialog(null,
@@ -840,9 +816,9 @@ public class SipnTea {
         );
         System.exit(0);
     }
-    
-    public static void main (String args[]) {
-    	
-    	new SipnTea().DisplayMainMenu();
+
+    public static void main(String args[]) {
+
+        new SipnTea().DisplayMainMenu();
     }
 }
